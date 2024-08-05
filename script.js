@@ -42,7 +42,7 @@ carousel.addEventListener('mouseleave', () => {
 // Iniciar o carrossel
 startSlide();
 
-
+/*
 // JavaScript para o botão hamburger
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
@@ -51,3 +51,10 @@ hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('open');
     hamburger.classList.toggle('open');
 });
+*/
+
+function toogleMenu() {
+    const navLinks = document.querySelector('.nav-links');
+
+    navLinks.classList.toggle('active');
+}

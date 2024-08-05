@@ -13,14 +13,13 @@ body {
 
 /*                                                       HEADER                                                                          */
 
-header {
-    width: 100vw;
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 50px;
+    padding: 10px 20px;
     background-color: #222222;
-    color: white;
+    color: #d9d9d9;
     position: sticky;
     top: 0;
 }
@@ -31,17 +30,32 @@ header {
 }
 
 .nav-links {
-    list-style-type: none;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .nav-links li {
-    display: inline;
     margin-left: 20px;
 }
 
-.nav-links li a {
+.nav-links a {
     text-decoration: none;
     color: #d9d9d9;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #d9d9d9;
+    margin: 4px 0;
 }
 
 .nav-links li a:hover {
@@ -87,7 +101,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     width: 100vw;
     scroll-snap-align: start;
 
@@ -95,7 +108,6 @@ main {
 
 .content {
     width: 100vw;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -122,16 +134,15 @@ p {
 
 .services-menu {
     width: 100vw;
-    height: 100vh;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 1em;
 }
 
 .frame {
     display: flex;
     flex-direction: column;
-    width: 25em;
     height: 28em;
 
 }
@@ -152,6 +163,10 @@ p {
     display: flex;
     justify-content: center;
 }
+.ti, .add-services {
+    padding: 0.5em;
+
+}
 
 .construct-panel h3 {
     text-align: center;
@@ -167,7 +182,6 @@ p {
     align-items: center;
     background-color: #222222;
     width: 100%;
-    height: 100%;
 }
 .about-title {
     color: #d9d9d9;
@@ -176,7 +190,6 @@ p {
 
 .about-box {
     display: flex;
-    width: 60%;
     padding: 20px;
     justify-content: space-around;
     align-items: center;
@@ -322,45 +335,37 @@ footer p {
 /*RESPONSIVIDADE*/
 
 
-/* Menu Responsivo */
+/*   Menu Responsivo */
 @media screen and (max-width: 767px) {
-    header {
+    .header {
         padding: 10px 20px;
         height: 4em;
     }
+
     .nav-links {
         display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-links.active {
+        display: flex;
     }
 
-    .hamburger {
-        display: block;
+    .menu-icon {
+        display: flex;
     }
+
     .brand a img{
         width: 4rem;
         
     }
 
-    .nav-links.open {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        text-align: center;
-        z-index: 1000;
-    }
-
-    .nav-links.open li {
-        display: block;
-        margin: 20px 0;
-    }
+  
 
 
     .carousel-container {
         height: 30vh;
         width: 100vw; 
-        border: solid blue 4px;
    
     }
     .carousel img {
@@ -368,10 +373,11 @@ footer p {
     }
 
     .section {
-        border: solid blue 4px;
         display: flex;
         flex-direction: column;
+
         height: fit-content;
+
 
     }
     .titulo {
@@ -380,11 +386,10 @@ footer p {
 
     .content {
         width: 100vw;
-        height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: solid red 1px;
+
     }
 
     .services-menu {
@@ -396,7 +401,6 @@ footer p {
     .frame {
         width: 85%;
         margin-bottom: 1em;
-        border: solid red 1px;
 
     }
     
@@ -425,11 +429,6 @@ footer p {
         margin-bottom: 1em;
     }
 
-     
-
-    .content-about {
-        height: 30em;
-    }
     .about-box {
         width: 100vw;
         display: flex;
@@ -441,7 +440,6 @@ footer p {
     .about-img {
         width: 8em;
         height: 8em;
-        border: solid red 1px;
         margin-top: -3em;
     }
 
@@ -501,21 +499,14 @@ footer p {
         height: 40vh;
     }
 
-    .section {
-        height: 60vh;
-    }
 
     .content {
         width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: solid red 1px;
     }
-    .services-menu {
-        height: 200vh;
-    }
-
+    
     .frame {
         width: 13em;
     }
@@ -551,8 +542,9 @@ footer p {
     }
 
     .about-img {
-        width: 10em;
-        height: 10em;
+        width: 12em;
+        height: 12em;
+        margin-top: -4em;
     }
 
     .about-text  p{
@@ -561,7 +553,6 @@ footer p {
 
     .about-text {
         width: 90%;
-        height: 10em;
         color: #d9d9d9;
     }
 
@@ -572,11 +563,7 @@ footer p {
     #contact {
         height: 30vh;
     }
-    .teste {
-        width: 100vw;
-        height: 50vh;
-        border: green 1px solid;
-    }
+    
 }
 
 /* Estilos para telas menores que 480px (mobile pequeno) */
